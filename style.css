@@ -1,0 +1,13 @@
+/* 
+  Este arquivo agora funciona como um orquestrador, 
+  importando todos os componentes CSS em uma ordem lógica.
+*/
+
+@import url('global.css');
+@import url('navbar.css');
+@import url('hero.css');
+@import url('about.css');
+@import url('specializations.css');
+@import url('projects.css');
+@import url('footer.css');
+@import url('responsive.css');

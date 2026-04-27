@@ -1,0 +1,31 @@
+.about-section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center; /* Centraliza o conteúdo inline, como o h2 */
+}
+
+.about-content p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 25px; /* Espaçamento entre os parágrafos */
+    color: #d1d1d1;
+    text-align: left; /* Mantém os parágrafos alinhados à esquerda */
+}
+
+.final-vision {
+    font-style: italic;
+    border-left: 3px solid var(--cyan-neon); /* Pequeno detalhe lateral para destaque */
+    padding-left: 20px;
+    margin-top: 30px;
+    color: var(--branco-nevoa) !important;
+}
+
+.highlight {
+    color: #00ffff;
+    font-weight: 600;
+}

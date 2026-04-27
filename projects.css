@@ -1,0 +1,258 @@
+/* SEÇÃO DE PROJETOS */
+#projetos {
+    padding: 80px 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    text-align: center;
+}
+
+.projeto-bloco {
+    background: var(--glass);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.projeto-bloco h3 {
+    font-size: 2rem;
+    color: var(--cyan-neon);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.grid-projetos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.grid-projetos img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.grid-projetos img:hover {
+    transform: scale(1.05);
+    border-color: #00ffff;
+}
+
+.carousel-wrapper {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    display: flex;
+    align-items: center;
+    z-index: 1; /* Cria um contexto de empilhamento para forçar os filhos a respeitarem o clipping do border-radius. */
+}
+
+.art-carousel-wrapper {
+    display: none; /* Escondido por padrão (desktop), ativado no responsive.css para mobile */
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Estilo holográfico com brilho (chevron) */
+    background: transparent;
+    color: #00ffff;
+    border: none;
+    border-radius: 0;
+    width: auto;
+    height: auto;
+    padding: 10px; /* Aumenta a área de clique */
+    font-size: 38px; /* Tamanho da seta */
+    font-weight: 100; /* Seta mais fina */
+    cursor: pointer;
+    z-index: 10;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.5);
+    transition: transform 0.2s ease-in-out, text-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+    -webkit-tap-highlight-color: transparent; /* Remove o highlight de toque no iOS/Android */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+}
+
+.carousel-btn:hover {
+    color: #fff;
+    transform: translateY(-50%) scale(1.15);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 30px rgba(0, 255, 255, 0.7);
+}
+
+/* Remove o contorno azul padrão do navegador ao focar o botão */
+.carousel-btn:focus {
+    outline: none;
+}
+
+/* Adiciona um feedback visual sutil ao pressionar o botão (ótimo para mobile) */
+.carousel-btn:active {
+    /* Mantém a centralização vertical e adiciona um efeito de clique */
+    transform: translateY(-50%) scale(0.95) !important;
+}
+
+.carousel-btn.prev {
+    left: -50px;
+}
+
+.carousel-btn.next {
+    right: -50px;
+}
+
+.carousel-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.carrossel-container {
+    overflow: hidden;
+    width: 100%;
+    /* Aumenta o padding vertical para que a imagem central ampliada não seja cortada.
+       Adiciona padding horizontal para criar o espaço lateral. */
+    padding: 50px 20px;
+    /* O border-radius do container deve ser o mesmo das imagens para evitar o corte dos cantos. */
+    border-radius: 2em;
+    /* Força a criação de um novo contexto de empilhamento para corrigir bugs de clipping com border-radius em alguns navegadores. */
+    transform: translateZ(0);
+}
+
+.carrossel-track {
+    display: flex;
+    gap: 25px;
+    transition: transform 0.5s ease-in-out;
+    align-items: center; /* Alinha verticalmente para o efeito de escala ficar bom */
+}
+
+.carrossel-track img {
+    flex-shrink: 0;
+    border-radius: 2em; /* Aumentado para um arredondamento mais visível */
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    position: relative; /* Necessário para o z-index funcionar */
+    z-index: 1;
+}
+
+/* Classe para desativar a transição da imagem durante o "salto" do loop infinito */
+.carrossel-track.no-transition img {
+    transition: none;
+}
+
+.carrossel-track img.is-center {
+    transform: scale(1.15);
+    /* Usamos drop-shadow em vez de box-shadow para garantir que a sombra siga perfeitamente os cantos arredondados da imagem. */
+    filter: drop-shadow(0 0 5px rgba(0, 240, 255, 0.35));
+    z-index: 2; /* Garante que a imagem central fique por cima das outras */
+}
+
+.projeto-descricao {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.projeto-descricao p {
+    color: #d1d1d1;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.projeto-descricao .cta-hero {
+    margin-top: 0; /* Remove a margem superior para o espaçamento ser controlado apenas pelo parágrafo */
+}
+
+.btn-link {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #00ffff;
+    border: 1px solid #00ffff;
+    text-decoration: none;
+    border-radius: 4px;
+    background: rgba(0, 255, 255, 0.05);
+    transition: 0.3s;
+}
+
+.btn-link:hover {
+    background: #00ffff;
+    color: #000;
+}
+
+.grid-videos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center; 
+    margin-bottom: 30px;
+}
+
+.video-container {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    background: #000;
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 9 / 16;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.9);
+    transition: 0.5s;
+}
+
+.video-container:hover video {
+    filter: brightness(1.1);
+    transform: scale(1.02);
+}
+
+.video-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    color: #00ffff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    border: 1px solid #00ffff;
+    z-index: 2;
+}
+
+.video-footer-link {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #00ffff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: background 0.3s ease;
+    border-top: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.video-footer-link:hover {
+    background: rgba(0, 255, 255, 0.15);
+    color: #fff;
+}
+
+.external-icon {
+    font-size: 12px;
+    margin-left: 5px;
+}

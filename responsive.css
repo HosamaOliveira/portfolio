@@ -1,0 +1,50 @@
+/* --- TRANSIÇÃO PARA DESKTOP (Telas maiores que 945px) --- */
+@media (min-width: 946px) {
+    .nav-desktop {
+        display: flex; /* Mostra o menu desktop */
+    }
+
+    .menu-toggle,
+    .nav-mobile {
+        display: none !important; /* Garante que TUDO do mobile desapareça */
+    }
+}
+
+/* --- AJUSTES GERAIS PARA TELAS MENORES (TABLETS E CELULARES) --- */
+@media (max-width: 768px) {
+    /* Ajustes de rolagem, espaçamento e títulos para o celular */ 
+    section[id] {
+        scroll-margin-top: 80px;
+    }
+    .about-section, .spec-section, #projetos {
+        padding: 60px 5%; /* Unificando o padding de todas as seções */
+    }
+    h2, .about-content h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    /* Layouts */
+    .hero h1 { font-size: 2.5rem; }
+    .btn-group { flex-direction: column; }
+    .spec-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .grid-projetos {
+        display: none; /* Esconde o grid no mobile para usar o carrossel */
+    }
+    .art-carousel-wrapper {
+        display: flex; /* Mostra o carrossel de arte no mobile */
+    }
+    .grid-videos {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .carousel-btn.prev {
+        left: -25px;
+    }
+    .carousel-btn.next {
+        right: -25px;
+    }
+}

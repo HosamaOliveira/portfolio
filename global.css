@@ -1,0 +1,131 @@
+/* VARIÁVEIS PARA FACILITAR SUA EDIÇÃO */
+:root {
+    --roxo-estelar: #4B0082;
+    --preto-espacial: #0B0E14;
+    --cyan-neon: #00F0FF;
+    --branco-nevoa: #F5F5F7;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Adicionado para reforçar a prevenção de overflow horizontal em todos os navegadores */
+    background-color: var(--preto-espacial); /* Garante que a área de "overscroll" no mobile tenha a cor de fundo correta */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ajuste de rolagem para compensar o menu fixo no topo */
+section[id] {
+    scroll-margin-top: 120px;
+}
+
+body {
+    /* O background foi movido para um pseudo-elemento para corrigir bugs no mobile */
+    color: var(--branco-nevoa);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    position: relative; /* Para criar um contexto de empilhamento para o pseudo-elemento */
+    z-index: 0; /* Garante que o conteúdo fique acima do background */
+}
+
+/* Novo pseudo-elemento para o background fixo (mais robusto no mobile) */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, var(--roxo-estelar) 0%, #1a1a2e 40%, var(--preto-espacial) 100%);
+    z-index: -1; /* Coloca o background atrás de todo o conteúdo */
+}
+
+h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(90deg, #fff, var(--cyan-neon));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Linha decorativa abaixo do título */
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--cyan-neon);
+    border-radius: 10px;
+    box-shadow: 0 0 15px var(--cyan-neon);
+}
+
+/* Estilos para a nova seção de Contato */
+.contact-section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.contact-icon-link {
+    font-size: 3.5rem;
+    color: var(--branco-nevoa);
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+.contact-icon-link:hover {
+    transform: translateY(-8px);
+    text-shadow: 0 0 15px var(--cyan-neon), 0 0 30px rgba(0, 240, 255, 0.7);
+}
+
+/* CTA Button - Hero Section */
+.cta-hero {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 12px 30px;
+    
+    /* Glassmorphism */
+    background: rgba(0, 240, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    /* Border */
+    border: 1px solid rgba(0, 240, 255, 0.4);
+    border-radius: 8px;
+
+    /* Typography */
+    color: var(--cyan-neon);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    font-size: 0.9rem;
+
+    /* Animation */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-hero:hover {
+    transform: translateY(-3px);
+    color: #fff;
+    background-color: rgba(0, 240, 255, 0.2);
+    border-color: rgba(0, 240, 255, 1);
+    /* Glow effect */
+    box-shadow: 0 5px 20px rgba(0, 240, 255, 0.4);
+}

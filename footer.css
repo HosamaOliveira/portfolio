@@ -1,0 +1,15 @@
+footer {
+    text-align: center;
+    padding: 50px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.footer-creditos {
+    margin-top: 10px;
+    color: #8b5cf6; 
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.5); /* Cria uma aura roxa em volta do texto */
+    font-weight: bold;
+    font-style: italic;
+}

@@ -1,0 +1,51 @@
+.spec-section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.spec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.spec-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(0, 240, 255, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+    text-align: left;
+}
+
+.spec-card:hover {
+    transform: scale(1.03);
+    border-color: var(--cyan-neon);
+    box-shadow: 0 10px 30px rgba(0, 240, 255, 0.15);
+    background: rgba(0, 240, 255, 0.05);
+}
+
+.spec-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #8fa7b3;
+    filter: drop-shadow(0 0 2px rgba(0, 255, 255, 0.6));
+    /* Ajuste de opacidade para não brigar com o título */
+    opacity: 0.9;
+    
+    transition: all 0.3s ease;
+}
+
+.spec-card h3 {
+    color: var(--cyan-neon);
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.spec-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #b0b0b0;
+}

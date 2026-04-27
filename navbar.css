@@ -1,0 +1,99 @@
+/* NAVEGAÇÃO */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 10%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(11, 14, 20, 0.199); /* Fundo semitransparente para o efeito de vidro */
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--branco-nevoa);
+}
+
+.logo span { color: var(--cyan-neon); }
+
+.nav-desktop a,
+.nav-mobile a {
+    color: var(--branco-nevoa);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-desktop a:hover,
+.nav-mobile a:hover { color: var(--cyan-neon); }
+
+/* Por padrão (mobile), o menu desktop some e o botão do menu aparece */
+.nav-desktop {
+    display: none;
+}
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    z-index: 2000; /* Acima do menu lateral */
+    position: fixed; /* Garante que o botão fique fixo na rolagem */
+    top: 1.75rem; /* Valor para centralizar na altura da navbar original */
+    right: 10%;
+}
+
+/* Estilos do menu lateral que desliza */
+.nav-mobile {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: -400px; /* Começa fora da tela */
+    width: 280px;
+    height: 100vh;
+    background: rgba(11, 14, 20, 0.6);
+    backdrop-filter: blur(15px);
+    border-left: 1px solid var(--cyan-neon);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Alinhamento à esquerda */
+    transition: right 0.4s ease;
+    padding-left: 40px; /* Espaçamento para os links */
+    z-index: 1500;
+}
+
+.nav-mobile.active {
+    right: 0; /* Entra na tela */
+}
+
+.nav-desktop a {
+    margin-left: 2rem;
+    font-size: 0.9rem;
+}
+
+.nav-mobile a {
+    margin: 15px 0;
+    font-size: 1.1rem; /* Tamanho ajustado */
+    letter-spacing: 2px; /* Espaçamento aumentado */
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--branco-nevoa);
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+.menu-toggle.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+.menu-toggle.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
