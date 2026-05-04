@@ -20,7 +20,8 @@ html {
 }
 
 /* Ajuste de rolagem para compensar o menu fixo no topo */
-section[id] {
+section[id],
+.projeto-bloco[id] { /* Adicionado para os links de sub-menu */
     scroll-margin-top: 120px;
 }
 
@@ -29,6 +30,7 @@ body {
     color: var(--branco-nevoa);
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     position: relative; /* Para criar um contexto de empilhamento para o pseudo-elemento */
+    overflow-x: hidden; /* Previne a barra de rolagem horizontal em dispositivos móveis */
     z-index: 0; /* Garante que o conteúdo fique acima do background */
 }
 

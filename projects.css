@@ -60,31 +60,33 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    /* Estilo holográfico com brilho (chevron) */
-    background: transparent;
-    color: #00ffff;
-    border: none;
-    border-radius: 0;
-    width: auto;
-    height: auto;
-    padding: 10px; /* Aumenta a área de clique */
-    font-size: 38px; /* Tamanho da seta */
-    font-weight: 100; /* Seta mais fina */
+    /* Novo estilo: Círculo com efeito de vidro */
+    background: var(--glass);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    width: 40px; /* Círculo menor */
+    height: 40px; /* Círculo menor */
+    color: #fff; /* Seta branca por padrão */
+    font-size: 24px; /* Ícone um pouco menor */
     cursor: pointer;
     z-index: 10;
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.5);
-    transition: transform 0.2s ease-in-out, text-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: all 0.3s ease;
     -webkit-tap-highlight-color: transparent; /* Remove o highlight de toque no iOS/Android */
     display: flex;
     justify-content: center;
     align-items: center;
-    line-height: 1;
+    padding: 0;
+    text-shadow: none;
 }
 
 .carousel-btn:hover {
-    color: #fff;
-    transform: translateY(-50%) scale(1.15);
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 30px rgba(0, 255, 255, 0.7);
+    color: var(--cyan-neon); /* Seta fica ciano no hover */
+    transform: translateY(-50%) scale(1.1);
+    background: rgba(0, 255, 255, 0.1);
+    border-color: var(--cyan-neon);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7); /* Adiciona o brilho no hover */
 }
 
 /* Remove o contorno azul padrão do navegador ao focar o botão */
@@ -96,6 +98,7 @@
 .carousel-btn:active {
     /* Mantém a centralização vertical e adiciona um efeito de clique */
     transform: translateY(-50%) scale(0.95) !important;
+    background: rgba(0, 255, 255, 0.2); /* Fundo azulado ao clicar */
 }
 
 .carousel-btn.prev {
@@ -130,23 +133,25 @@
     align-items: center; /* Alinha verticalmente para o efeito de escala ficar bom */
 }
 
-.carrossel-track img {
+.carrossel-track > * {
     flex-shrink: 0;
-    border-radius: 2em; /* Aumentado para um arredondamento mais visível */
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    border-radius: 12px;
+    transition: transform 0.5s ease, filter 0.5s ease;
     position: relative; /* Necessário para o z-index funcionar */
     z-index: 1;
+    overflow: hidden; /* Garante que o conteúdo (iframe/img) respeite o border-radius */
+    background: #000; /* Fundo para os wrappers de vídeo antes do iframe carregar */
 }
 
-/* Classe para desativar a transição da imagem durante o "salto" do loop infinito */
-.carrossel-track.no-transition img {
+/* Classe para desativar a transição durante o "salto" do loop infinito */
+.carrossel-track.no-transition > * {
     transition: none;
 }
 
-.carrossel-track img.is-center {
+.carrossel-track > .is-center {
     transform: scale(1.15);
     /* Usamos drop-shadow em vez de box-shadow para garantir que a sombra siga perfeitamente os cantos arredondados da imagem. */
-    filter: drop-shadow(0 0 5px rgba(0, 240, 255, 0.35));
+    filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.25));
     z-index: 2; /* Garante que a imagem central fique por cima das outras */
 }
 
@@ -196,7 +201,6 @@
     border: 1px solid rgba(0, 255, 255, 0.3);
     background: #000;
     width: 100%;
-    max-width: 300px;
     aspect-ratio: 9 / 16;
 }
 
@@ -255,4 +259,40 @@
 .external-icon {
     font-size: 12px;
     margin-left: 5px;
+}
+
+/* Estilos para o Wrapper de Vídeo do YouTube no Carrossel */
+.video-embed-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16; /* Proporção unificada para vídeos verticais, igual à seção Sora */
+}
+
+/* Overlay para impedir a interação com vídeos que não estão no centro */
+.video-embed-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5; /* Fica acima do vídeo, mas abaixo dos botões do carrossel */
+    background: transparent; /* Invisível, apenas para capturar cliques */
+    pointer-events: auto; /* Por padrão, captura todos os eventos do mouse */
+}
+
+/* Quando o vídeo está no centro, o overlay é desativado, permitindo cliques no player */
+.video-embed-wrapper.is-center::after {
+    pointer-events: none;
+}
+
+.video-embed-wrapper iframe,
+.video-embed-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: cover; /* Garante que o vídeo preencha o contêiner, removendo as tarjas pretas */
 }

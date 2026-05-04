@@ -17,7 +17,15 @@
         <div class="nav-desktop">
             <a href="#sobre">Trajetória</a>
             <a href="#especializacoes">Especializações</a>
-            <a href="#projetos">Projetos</a> 
+            <div class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Projetos <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-menu">
+                    <a href="#projetos">Arte & Curadoria</a>
+                    <a href="#producao-video">Produção de Vídeo</a>
+                    <a href="#publicacoes-editoriais">Publicações Editoriais</a>
+                    <a href="#edicao-video">Edição de Vídeo</a>
+                </div>
+            </div>
             <a href="#contato">Contato</a>
         </div>
     </nav>
@@ -31,14 +39,22 @@
     <div class="nav-mobile" id="nav-mobile">
         <a href="#sobre">Trajetória</a>
         <a href="#especializacoes">Especializações</a>
-        <a href="#projetos">Projetos</a> 
+        <div class="nav-item dropdown">
+            <a href="#" class="dropdown-toggle">Projetos <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-menu">
+                <a href="#projetos">Arte & Curadoria</a>
+                <a href="#producao-video">Produção de Vídeo</a>
+                <a href="#publicacoes-editoriais">Publicações Editoriais</a>
+                <a href="#edicao-video">Edição de Vídeo</a>
+            </div>
+        </div>
         <a href="#contato">Contato</a>
     </div>
 
     <section class="hero">
         <div class="badge">✨ Futuro da Criação Visual</div>
-        <h1>Engenharia de Prompts<br> <span class="gradient-text">Especialista em IA Generativa</span></h1>
-        <p>Especialista certificada pelo SENAI/SC em Fundamentos e Criação de Prompts. Unindo curadoria artística a uma metodologia técnica rigorosa para escalar sua produção de ativos digitais.</p>
+        <h1>Especialista em IA Generativa<br> <span class="gradient-text">& Editora de Vídeos</span></h1>
+        <p>Unindo a potência da tecnologia à sensibilidade do olhar humano. <br>Criando narrativas visuais que conectam, emocionam e geram resultados.</p>
         <a href="#contato" class="cta-hero">Vamos criar juntos?</a>
     </section>
 
@@ -117,26 +133,26 @@
 
 <section id="projetos">
     <h2>Projetos</h2>
-    <div class="projeto-bloco">
+    <div class="projeto-bloco" id="arte-curadoria">
         <h3>Arte & Curadoria Digital</h3>
         <div class="grid-projetos">
             <a href="https://stock.adobe.com/br/stock-photo/id/1725544401" target="_blank">
-                <img src="Imagens/imagem4.jpg" alt="Arte gerada com IA para Adobe Stock" loading="lazy">
+                <img src="Imagens/imagem4.jpg" alt="Retrato de uma jovem com rosto em neon e formas digitais. Arte gerada com IA para Adobe Stock." loading="lazy">
             </a>
             <a href="https://stock.adobe.com/br/stock-photo/id/1986613846" target="_blank">
-                <img src="Imagens/imagem1.jpg" alt="Arte gerada com IA para Adobe Stock" loading="lazy">
+                <img src="Imagens/imagem1.jpg" alt="Tênis transparentes criativos recheados com flores silvestres frescas e musgo verde. Arte gerada com IA para Adobe Stock" loading="lazy">
             </a>
              <a href="https://stock.adobe.com/br/stock-photo/id/1736083298" target="_blank">
-                <img src="Imagens/imagem5.jpg" alt="Arte gerada com IA para Adobe Stock" loading="lazy">
+                <img src="Imagens/imagem5.jpg" alt="Hambúrguer em close-up hiper-realista, com camadas de alface e queijo se dissolvendo em partículas 3D coloridas e formas geométricas 2D flutuantes. Arte gerada com IA para Adobe Stock" loading="lazy">
             </a>
              <a href="https://stock.adobe.com/br/stock-photo/id/1626645554" target="_blank">
-                <img src="Imagens/imagem3.jpg" alt="Arte gerada com IA para Adobe Stock" loading="lazy">
+                <img src="Imagens/imagem3.jpg" alt="Crianças brincando de guerra de balões de água, close-up de um balão azul estourando ao contato, respingos em câmera lenta, fundo desfocado com grama e luz solar. Arte gerada com IA para Adobe Stock" loading="lazy">
             </a>
              <a href="https://stock.adobe.com/br/stock-photo/id/1599199359" target="_blank">
-                <img src="Imagens/imagem2.jpg" alt="Arte gerada com IA para Adobe Stock" loading="lazy">
+                <img src="Imagens/imagem2.jpg" alt="Criança sorridente com síndrome de Down sentada entre os pais em um quarto minimalista repleto de luz natural. Arte gerada com IA para Adobe Stock" loading="lazy">
             </a>
              <a href="https://stock.adobe.com/br/stock-photo/id/1706362062" target="_blank">
-                <img src="Imagens/imagem6.jpg" alt="Arte gerada com IA para Adobe Stock" loading="lazy">
+                <img src="Imagens/imagem6.jpg" alt="Close-up de uma mulher respirando profundamente com os olhos fechados, luz suave, fundo natural desfocado. Arte gerada com IA para Adobe Stock" loading="lazy">
             </a>
         </div>
         <!-- Carrossel para Mobile -->
@@ -144,12 +160,12 @@
             <button class="carousel-btn prev" id="art-carousel-prev" aria-label="Anterior">&lt;</button>
             <div class="carrossel-container" id="art-carousel-container">
                 <div class="carrossel-track" id="art-carousel-track">
-                    <img src="Imagens/imagem4.jpg" alt="Arte gerada com IA para Adobe Stock" loading="lazy">
-                    <img src="Imagens/imagem1.jpg" alt="Arte gerada com IA para Adobe Stock" loading="lazy">
-                    <img src="Imagens/imagem5.jpg" alt="Arte gerada com IA para Adobe Stock" loading="lazy">
-                    <img src="Imagens/imagem3.jpg" alt="Arte gerada com IA para Adobe Stock" loading="lazy">
-                    <img src="Imagens/imagem2.jpg" alt="Arte gerada com IA para Adobe Stock" loading="lazy">
-                    <img src="Imagens/imagem6.jpg" alt="Arte gerada com IA para Adobe Stock" loading="lazy">
+                    <img src="Imagens/imagem4.jpg" alt="Retrato de uma jovem com rosto em neon e formas digitais. Arte gerada com IA para Adobe Stock." loading="lazy">
+                    <img src="Imagens/imagem1.jpg" alt="Tênis transparentes criativos recheados com flores silvestres frescas e musgo verde. Arte gerada com IA para Adobe Stock" loading="lazy">
+                    <img src="Imagens/imagem5.jpg" alt="Hambúrguer em close-up hiper-realista, com camadas de alface e queijo se dissolvendo em partículas 3D coloridas e formas geométricas 2D flutuantes. Arte gerada com IA para Adobe Stock" loading="lazy">
+                    <img src="Imagens/imagem3.jpg" alt="Crianças brincando de guerra de balões de água, close-up de um balão azul estourando ao contato, respingos em câmera lenta, fundo desfocado com grama e luz solar. Arte gerada com IA para Adobe Stock" loading="lazy">
+                    <img src="Imagens/imagem2.jpg" alt="Criança sorridente com síndrome de Down sentada entre os pais em um quarto minimalista repleto de luz natural. Arte gerada com IA para Adobe Stock" loading="lazy">
+                    <img src="Imagens/imagem6.jpg" alt="Close-up de uma mulher respirando profundamente com os olhos fechados, luz suave, fundo natural desfocado. Arte gerada com IA para Adobe Stock" loading="lazy">
                 </div>
             </div>
             <button class="carousel-btn next" id="art-carousel-next" aria-label="Próximo">&gt;</button>
@@ -158,45 +174,48 @@
             <p>Portfólio oficial <strong>Dutz Creative Studio</strong> na <strong>Adobe Stock</strong>, 
     com mais de <strong>2.800 ativos digitais</strong> aprovados e validados para licenciamento 
     comercial em escala global.</p>
-            <a href="#contato" class="cta-hero">Vamos criar juntos?</a>
+            <a href="https://stock.adobe.com/br/contributor/212837779/Dutz%20Creative%20Studio" class="cta-hero" target="_blank">Dutz Creative Studio na Adobe Stock</a>
         </div>
     </div>
 
-    <div class="projeto-bloco">
+    <div class="projeto-bloco" id="producao-video">
         <h3>Produção de Vídeo (Sora 1)</h3>
-        <div class="grid-videos">
-            <div class="video-container">
-                <video src="Vídeos/God_otimizado.webm" muted loop autoplay playsinline poster="videos/thumb1.jpg"></video>
-                
-                <a href="https://www.tiktok.com/@hosamamiodutzki/video/7579367070203137296" target="_blank" class="video-footer-link">
-                    Ver vídeo original <span class="external-icon">↗</span>
-                </a>
+        <div class="carousel-wrapper">
+            <button class="carousel-btn prev" id="sora-carousel-prev" aria-label="Anterior">&lt;</button>
+            <div class="carrossel-container" id="sora-carousel-container">
+                <div class="carrossel-track" id="sora-carousel-track">
+                    <div class="video-container">
+                        <video src="https://res.cloudinary.com/dsofoqcd2/video/upload/v1777667731/God_otimizado_hcxi3o.webm" muted loop autoplay playsinline></video>
+                        <a href="https://www.tiktok.com/@hosamamiodutzki/video/7579367070203137296" target="_blank" class="video-footer-link">
+                            Ver vídeo original <span class="external-icon">↗</span>
+                        </a>
+                    </div>
+                    <div class="video-container">
+                        <video src="https://res.cloudinary.com/dsofoqcd2/video/upload/v1777667528/video_otimizado_wbx9sn.webm" muted loop autoplay playsinline></video>
+                        <a href="https://www.tiktok.com/@hosamamiodutzki/video/7590553740881448199" target="_blank" class="video-footer-link">
+                            Ver vídeo original <span class="external-icon">↗</span>
+                        </a>
+                    </div>
+                    <div class="video-container">
+                        <video src="https://res.cloudinary.com/dsofoqcd2/video/upload/v1777668047/Guia_otimizadoMenor_iuupix.mp4" muted loop autoplay playsinline></video>
+                        <a href="https://www.tiktok.com/@hosamamiodutzki/video/7579725389094833409" target="_blank" class="video-footer-link">
+                            Ver vídeo original <span class="external-icon">↗</span>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="video-container">
-                <video src="Vídeos/Guia_otimizado.webm" muted loop autoplay playsinline poster="videos/thumb1.jpg"></video>
-                
-                <a href="https://www.tiktok.com/@hosamamiodutzki/video/7590553740881448199" target="_blank" class="video-footer-link">
-                    Ver vídeo original <span class="external-icon">↗</span>
-                </a>
-            </div>
-            <div class="video-container">
-                <video src="Vídeos/video_otimizado.webm" muted loop autoplay playsinline poster="videos/thumb1.jpg"></video>
-                
-                <a href="https://www.tiktok.com/@hosamamiodutzki/video/7579725389094833409" target="_blank" class="video-footer-link">
-                    Ver vídeo original <span class="external-icon">↗</span>
-                </a>
-            </div>
+            <button class="carousel-btn next" id="sora-carousel-next" aria-label="Próximo">&gt;</button>
         </div>
-            <div class="projeto-descricao">
+        <div class="projeto-descricao">
                 <p>Explorando o potencial máximo do <strong>Sora 1</strong>. Mais de 
                 <span><strong>2,8 milhões de views</strong></span> em menos de dois meses, 
                 provando o poder da IA na criação de conteúdo.</p>
-                <a href="#contato" class="cta-hero">Vamos criar juntos?</a>
+                <a href="https://www.tiktok.com/@hosamamiodutzki" class="cta-hero" target="_blank">O Som do Criador no TikTok</a>
             </div>
             
     </div>
 
-    <div class="projeto-bloco">
+    <div class="projeto-bloco" id="publicacoes-editoriais">
         <h3>Publicações Editoriais</h3>
         <div class="carousel-wrapper">
             <button class="carousel-btn prev" id="carousel-prev" aria-label="Anterior">&lt;</button>
@@ -209,10 +228,12 @@
                     <img src="Imagens/Lino1Inglês.jpg" alt="Contra-capa da versão em inglês do livro Lino" loading="lazy">
                     <img src="Imagens/LinoFundoInglês.jpg" alt="Página de dedicatória da versão em inglês do livro Lino" loading="lazy">
                     <img src="Imagens/AmigosBR.jpg" alt="Contra-capa da versão em inglês do livro Lino" loading="lazy">
-                    <img src="Imagens/AmigosBRMeio.jpg" alt="Contra-capa da versão em inglês do livro Lino" loading="lazy">
+                    <img src="Imagens/Cavalo1.png" alt="Contra-capa da versão em inglês do livro Lino" loading="lazy">
+                    <img src="Imagens/Cavalo2.png" alt="Contra-capa da versão em inglês do livro Lino" loading="lazy">
                     <img src="Imagens/AmigosBRFundo.jpg" alt="Contra-capa da versão em inglês do livro Lino" loading="lazy">
                     <img src="Imagens/AmigosEN.jpg" alt="Contra-capa da versão em inglês do livro Lino" loading="lazy">
-                    <img src="Imagens/AmigosENMeio.jpg" alt="Contra-capa da versão em inglês do livro Lino" loading="lazy">
+                    <img src="Imagens/capibara1.png" alt="Contra-capa da versão em inglês do livro Lino" loading="lazy">
+                    <img src="Imagens/capibara2.png" alt="Contra-capa da versão em inglês do livro Lino" loading="lazy">
                     <img src="Imagens/AmigosENFundo.jpg" alt="Contra-capa da versão em inglês do livro Lino" loading="lazy">
                 </div>
             </div>
@@ -223,7 +244,47 @@
     <strong>fluxos avançados de IA Generativa</strong>, garantindo 
     <strong>consistência visual e narrativa</strong> em publicações de escala global pela 
     <strong>Editora Dutz</strong>.</p>
-            <a href="#contato" class="cta-hero">Vamos criar juntos?</a>
+            <a href="https://www.amazon.com/author/editoradutz" class="cta-hero" target="_blank">Editora Dutz na Amazon KDP</a>
+        </div>
+    </div>
+
+    <div class="projeto-bloco" id="edicao-video">
+        <h3>Edição de Vídeo</h3>
+        <div class="carousel-wrapper">
+            <button class="carousel-btn prev" id="video-edit-prev" aria-label="Anterior">&lt;</button>
+            <div class="carrossel-container" id="video-edit-container">
+                <div class="carrossel-track" id="video-edit-track">
+                    <!-- Cole o link .mp4 do Cloudinary no atributo src="" de cada tag <video> abaixo -->
+                    <div class="video-embed-wrapper">
+                        <video src="https://res.cloudinary.com/dsofoqcd2/video/upload/v1777761269/Cover_Stand_Up_-_Cynthia_Erivo_cKmX4Dx0mCc_jktbuk.webm" controls preload="metadata" controlsList="nodownload nofullscreen" disablepictureinpicture poster="/Imagens/StandUp.png"></video>
+                    </div>
+                    <div class="video-embed-wrapper">
+                        <video src="https://res.cloudinary.com/dsofoqcd2/video/upload/v1777761319/loveYouEditado_mwi1o7.mp4" controls preload="metadata" controlsList="nodownload nofullscreen" disablepictureinpicture poster="/Imagens/LoveYou.png"></video>
+                    </div>
+                    <div class="video-embed-wrapper">
+                        <video src="https://res.cloudinary.com/dsofoqcd2/video/upload/v1777761404/olharei_pro_altoEditado_xxnuul.mp4" controls preload="metadata" controlsList="nodownload nofullscreen" disablepictureinpicture poster="/Imagens/OlhareiProAltoMaior.png"></video>
+                    </div>
+                      <div class="video-embed-wrapper">
+                        <video src="https://res.cloudinary.com/dsofoqcd2/video/upload/v1777761429/Olharei_pro_alto_Midian_lima._tecnicavocal_desafiomusicalgospel_7412731888558722310_demunq.mp4" controls preload="metadata" controlsList="nodownload nofullscreen" disablepictureinpicture poster="/Imagens/OlhareiProAltoMenor.png"></video>
+                    </div>
+                    <div class="video-embed-wrapper">
+                        <video src="https://res.cloudinary.com/dsofoqcd2/video/upload/v1777761428/Uma_apresenta%C3%A7%C3%A3o_inesquec%C3%ADvel_cover_Amazing_grace._musica_musica_cover_gospelmusic_LIRT36_XZno_waigee.webm" controls preload="metadata" controlsList="nodownload nofullscreen" disablepictureinpicture poster="/Imagens/AmazingGraceMenor.png"></video>
+                    </div>
+                    <div class="video-embed-wrapper">
+                        <video src="https://res.cloudinary.com/dsofoqcd2/video/upload/v1777761374/GraceEditado_mwoyul.mp4" controls preload="metadata" controlsList="nodownload nofullscreen" disablepictureinpicture poster="/Imagens/AmazingGraceMaior.png"></video>
+                    </div>
+                    <div class="video-embed-wrapper">
+                        <video src="https://res.cloudinary.com/dsofoqcd2/video/upload/v1777761292/Resili%C3%AAnciaCorrigido1_gjiav7.mp4" controls preload="metadata" controlsList="nodownload nofullscreen" disablepictureinpicture poster="/Imagens/Resiliência.png"></video>
+                    </div>
+                    <div class="video-embed-wrapper">
+                        <video src="https://res.cloudinary.com/dsofoqcd2/video/upload/v1777765219/Bolsa_Girassol_artesanato_diy_croch%C3%AA_crochet_crocheting_handmade_bolsadecroche_feitoamao_x-s_PNPc1Jk_jyku60.webm" controls preload="metadata" controlsList="nodownload nofullscreen" disablepictureinpicture poster="/Imagens/BolsaGirassol.png"></video>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn next" id="video-edit-next" aria-label="Próximo">&gt;</button>
+        </div>
+        <div class="projeto-descricao">
+            <p>Edição voltada para redes sociais e projetos criativos. Transformo registros visuais em vídeos dinâmicos e impactantes, sempre com foco em ritmo, clareza e alto nível de engajamento.</p>
         </div>
     </div>
     </section>

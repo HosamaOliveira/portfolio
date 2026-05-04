@@ -36,6 +36,45 @@
 .nav-desktop a:hover,
 .nav-mobile a:hover { color: var(--cyan-neon); }
 
+/* --- DROPDOWN STYLES --- */
+.nav-item.dropdown {
+    position: relative;
+    display: inline-block; /* Para o alinhamento no desktop */
+    padding-bottom: 15px; /* Cria uma "ponte" para o cursor alcançar o submenu */
+    margin-bottom: -15px; /* Compensa o padding para não afetar a altura da navbar */
+}
+
+.dropdown-toggle .fa-chevron-down {
+    font-size: 0.7rem;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(11, 14, 20, 0.6);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    border-radius: 8px;
+    padding: 10px 0;
+    min-width: 220px;
+    z-index: 1001;
+    /* margin-top: 15px; */ /* Removido, pois o espaço agora é controlado pelo padding do elemento pai */
+}
+
+.dropdown-menu a {
+    padding: 10px 20px;
+    display: block;
+    margin: 0 !important; /* Sobrescreve a margem geral dos links da nav */
+    text-transform: none;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
 /* Por padrão (mobile), o menu desktop some e o botão do menu aparece */
 .nav-desktop {
     display: none;
@@ -80,11 +119,40 @@
     font-size: 0.9rem;
 }
 
+/* Efeito de hover para o dropdown no desktop */
+.nav-desktop .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.nav-desktop .dropdown:hover .dropdown-toggle .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+/* Ajuste para o item de dropdown no desktop não ter a margem do 'a' */
+.nav-desktop .nav-item.dropdown {
+    margin-left: 2rem;
+}
+.nav-desktop .dropdown-toggle {
+    margin-left: 0;
+}
+
 .nav-mobile a {
     margin: 15px 0;
     font-size: 1.1rem; /* Tamanho ajustado */
     letter-spacing: 2px; /* Espaçamento aumentado */
 }
+
+/* Estilos específicos para o dropdown no menu mobile */
+.nav-mobile .dropdown { width: 100%; }
+.nav-mobile .dropdown-menu {
+    position: static; /* Remove o posicionamento absoluto */
+    display: none; /* Escondido por padrão */
+    background: transparent; backdrop-filter: none; border: none; border-radius: 0;
+    padding: 0 0 0 20px; /* Indenta os sub-itens */
+    min-width: auto; margin-top: 10px; transform: none;
+}
+.nav-mobile .dropdown-menu.active { display: block; }
+.nav-mobile .dropdown-toggle.active .fa-chevron-down { transform: rotate(180deg); }
 
 .bar {
     width: 25px;
