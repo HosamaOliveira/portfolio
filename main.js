@@ -1,21 +1,29 @@
 const menuBtn = document.getElementById('mobile-menu');
 const navMobile = document.getElementById('nav-mobile');
 const links = document.querySelectorAll('.nav-mobile a');
+const menuBackdrop = document.getElementById('menu-backdrop');
+
+const closeMenu = () => {
+    navMobile.classList.remove('active');
+    menuBtn.classList.remove('active');
+    menuBackdrop.classList.remove('active');
+};
 
 // Abre e fecha o menu principal
 menuBtn.addEventListener('click', () => {
     navMobile.classList.toggle('active');
     menuBtn.classList.toggle('active');
+    menuBackdrop.classList.toggle('active');
 });
+
+// Fecha o menu ao clicar fora dele (no backdrop)
+menuBackdrop.addEventListener('click', closeMenu);
 
 // Fecha o menu ao clicar em um link de navegação (que não seja o dropdown)
 links.forEach(link => {
     link.addEventListener('click', () => {
         // Só fecha o menu se o link clicado não for o que abre o submenu
-        if (!link.classList.contains('dropdown-toggle')) {
-            navMobile.classList.remove('active');
-            menuBtn.classList.remove('active');
-        }
+        if (!link.classList.contains('dropdown-toggle')) closeMenu();
     });
 });
 
@@ -48,6 +56,32 @@ window.addEventListener('resize', () => {
 
 // --- LÓGICA DO CARROSSEL ---
 document.addEventListener('DOMContentLoaded', () => {
+
+    // --- LÓGICA DE SCROLLSPY PARA O MENU MOBILE (HIGHLIGHT DO ITEM ATIVO) ---
+    const sections = document.querySelectorAll('section[id], .projeto-bloco[id]');
+    const navLinks = document.querySelectorAll('.nav-mobile a:not(.dropdown-toggle)');
+    const scrollOffset = 150; // Offset para ativar o link um pouco antes da seção chegar ao topo
+
+    const activateLinkOnScroll = () => {
+        let currentSectionId = '';
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (window.scrollY >= sectionTop - scrollOffset) {
+                currentSectionId = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('current-link');
+            // Compara o href do link (ex: "#sobre") com o ID da seção visível
+            if (link.getAttribute('href') === `#${currentSectionId}`) {
+                link.classList.add('current-link');
+            }
+        });
+    };
+    window.addEventListener('scroll', activateLinkOnScroll);
+    activateLinkOnScroll(); // Executa uma vez no carregamento para definir o estado inicial
 
     const setupCarousel = (containerId, trackId, prevBtnId, nextBtnId, options = {}) => {
         const track = document.getElementById(trackId);
@@ -167,6 +201,19 @@ document.addEventListener('DOMContentLoaded', () => {
         track.addEventListener('transitionend', () => {
             handleJump();
             isTransitioning = false;
+
+            // Força o repaint do vídeo central após a transição para corrigir bugs de renderização dos controles no mobile.
+            const centerItem = track.querySelector('.is-center');
+            if (centerItem) {
+                const video = centerItem.querySelector('video');
+                if (video) {
+                    // A técnica de alternar a visibilidade força o navegador a redesenhar completamente o elemento do vídeo.
+                    video.style.visibility = 'hidden';
+                    // Força o navegador a processar a mudança de estilo antes de continuar.
+                    video.offsetHeight; 
+                    video.style.visibility = 'visible';
+                }
+            }
         });
 
         const move = (direction) => {

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
 /* VARIÁVEIS PARA FACILITAR SUA EDIÇÃO */
 :root {
     --roxo-estelar: #4B0082;
@@ -30,7 +32,6 @@ body {
     color: var(--branco-nevoa);
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     position: relative; /* Para criar um contexto de empilhamento para o pseudo-elemento */
-    overflow-x: hidden; /* Previne a barra de rolagem horizontal em dispositivos móveis */
     z-index: 0; /* Garante que o conteúdo fique acima do background */
 }
 
@@ -49,6 +50,7 @@ body::before {
 h2 {
     font-size: 2.8rem;
     font-weight: 800;
+    font-family: 'Space Grotesk', sans-serif;
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-bottom: 50px;
